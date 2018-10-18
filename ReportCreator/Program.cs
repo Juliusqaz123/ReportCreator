@@ -11,10 +11,11 @@ namespace ReportCreator
         static void Main(string[] args)
         {
             DatabaseReader dbr = new DatabaseReader();
-            dbr.ConnectToDatabase();
+            HTMLReportGenerator hrg = new HTMLReportGenerator();
+            dbr.ConnectToDatabase("Server=localhost;Database=Person;Trusted_Connection=true");
             dbr.ReadFromDatabase();
-            string table;
-            table = HTMLReportGenerator.GetMyTable(dbr.getPeople(), x => x.firstName, x=> x.lastName, x => x.telephone);
+            hrg.TableWriter<Person>(dbr.GetData());
+            
 
         }
     }

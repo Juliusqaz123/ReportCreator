@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace ReportCreator
 {
-    static class HTMLReportGenerator
-    {
-        public static string GetMyTable<T>(IEnumerable<T> list, params Func<T, object>[] fxns)
+     class HTMLReportGenerator
+        {
+
+        public void TableWriter<T>(List<Person> list)
+        {
+            var firstNameList = list.OrderBy(x => x.firstName).ToList();
+            var lastNameList = list.OrderBy(x => x.lastName).ToList();
+
+            PrintReport(firstNameList, "reportByFirstName.html", x => x.firstName, x => x.lastName, x => x.telephone);
+            PrintReport(lastNameList, "reportByLastName.html", x => x.firstName, x => x.lastName, x => x.telephone);
+        }
+            
+        public void PrintReport<T>(IEnumerable<T> list, string name, params Func<T, object>[] fxns)
         {
 
             StringBuilder sb = new StringBuilder();
@@ -26,7 +36,9 @@ namespace ReportCreator
             }
             sb.Append("</TABLE>");
 
-            return sb.ToString();
+            System.IO.File.WriteAllText(@"C:\Users\Studentas\source\repos\ReportGenerator\ReportGenerator\" + name, sb.ToString()); ;
         }
+
+        
     }
 }
