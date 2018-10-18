@@ -13,7 +13,8 @@ namespace ReportCreator
             DatabaseReader dbr = new DatabaseReader();
             dbr.ConnectToDatabase();
             dbr.ReadFromDatabase();
-            HTMLReportGenerator.GetMyTable(dbr.getPeople(), x => x.firstName, x=> x.lastName, x => x.telephone);
+            string table;
+            table = HTMLReportGenerator.GetMyTable(dbr.getPeople(), x => x.firstName, x=> x.lastName, x => x.telephone);
 
         }
     }
