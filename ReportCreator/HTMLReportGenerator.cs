@@ -36,7 +36,7 @@ namespace ReportCreator
             }
             sb.Append("</TABLE>");
 
-            System.IO.File.WriteAllText(@"C:\Users\Studentas\source\repos\ReportGenerator\ReportGenerator\" + name, sb.ToString()); ;
+            System.IO.File.WriteAllText(name, sb.ToString()); ;
         }
 
         
