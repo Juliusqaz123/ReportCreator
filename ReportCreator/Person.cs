@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReportCreator
 {
+    // simple model class
     class Person
     {
         public string firstName { set; get; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReportCreator
 {
-    interface DataGatherer<T>
+    interface IDatabaseReader<T>
     {
         //This method should establish connection to the server
         void ConnectToDatabase(string connection);

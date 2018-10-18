@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseReader.cs" />
-    <Compile Include="DataGatherer.cs" />
+    <Compile Include="IDatabaseReader.cs" />
     <Compile Include="HTMLReportGenerator.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />

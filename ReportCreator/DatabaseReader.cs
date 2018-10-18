@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace ReportCreator
 {
-    class DatabaseReader : DataGatherer<Person>
+    class DatabaseReader : IDatabaseReader<Person>
     {
         private SqlConnection conn;
         List<Person> persons = new List<Person>();
